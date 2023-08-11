@@ -1,2 +1,2 @@
 # Here are some pictures
-It sucks!
+These pictures may look ugly
