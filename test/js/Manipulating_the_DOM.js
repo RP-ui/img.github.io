@@ -1,27 +1,29 @@
-let Manipulating_the_DOM={
-    "read":function (read_type,information){
-        if(read_type=="id"){
-            if(document.getElementById(information)!=null){
-                return document.getElementById(information);
-            }else{
-                return null;
-            }
-        }
-        if(read_type=="class"){
-            if(document.getElementsByClassName(information).length!=0){
-                let returns_an_array=[];
-                for(let i=0;i<=document.getElementsByClassName(information).length;i++)
-                    returns_an_array[i]=document.getElementsByClassName(information).length[i];
-
-                return document.getElementsByClassName(information);
-            }else{
-                return null;
-            }
-        }
-    },
+let manipulating_the_DOM={
     "effect":{
-        "slide":function(direction,velocity,distance,id){
-            
+        "slide":function(index){
+            /*direction,distance,velocity,id*/
+            if(document.getElementById(index.id)!=null){
+                if(document.getElementById(index.id).style.position.length==0){
+                    document.getElementById(index.id).style.position="absolute";
+                    console.log(document.getElementById(index.id)+","+document.getElementById(index.id).style.position);
+                }
+                if(index.direction=="up"){
+                    for(let i=0;i<=Math.floor(+index.distance/index.velocity);i++){
+                        setTimeout(function(){
+                            document.getElementById(index.id).style.top=Number(document.getElementById(index.id).style.top.replace(/px/g,""))-index.velocity+"px";
+                        },i);
+                    }
+                }
+                if(index.direction=="right"){
+                    for(let i=0;i<=Math.floor(+index.distance/index.velocity);i++){
+                        setTimeout(function(){
+                            document.getElementById(index.id).style.left=Number(document.getElementById(index.id).style.left.replace(/px/g,""))+index.velocity+"px";
+                        },i);
+                    }
+                }
+            }else{
+                return null;
+            }
         },
     },
     "branch":true,

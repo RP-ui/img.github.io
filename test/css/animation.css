@@ -1,0 +1,5 @@
+.description_text_box:hover{
+    color:black;
+    filter:brightness(1.08);
+    transition-duration:0.5s;
+}

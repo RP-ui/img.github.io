@@ -1,0 +1,13 @@
+h1{
+    font-size:5vw;
+}
+.description_text_box{
+    width:20vw;
+    height:20vh;
+    border-radius:10px;
+    border:solid;
+    border-width:0.5px;
+    border-top-width:20px;
+    border-color:lightgray;
+    font-size:20px;
+}
